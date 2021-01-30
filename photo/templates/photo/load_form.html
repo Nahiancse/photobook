@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+<form action="add_item" method="POST">
+    {% csrf_token %}
+    <label> Give a caption of your photo </label>
+    <div>{{ form.caption }}</div>
+
+    <label> Upload your photo </label>
+    <div>{{ form.image }}</div>
+
+    <label> Add Description About This Photo </label>
+    <div>{{ form.description }}</div>
+
+</form>

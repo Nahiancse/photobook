@@ -1,6 +1,6 @@
-{% extends 'index.html' %}
+{% extends 'photo/index.html' %}
 {% block content %}
-<form action="add_item" method="POST">
+<form action="add_item" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <label> Give a caption of your photo </label>
     <div>{{ form.caption }}</div>
@@ -11,4 +11,7 @@
     <label> Add Description About This Photo </label>
     <div>{{ form.description }}</div>
 
+    <div><button type="submit">Save </button></div>
+
 </form>
+{% endblock %}

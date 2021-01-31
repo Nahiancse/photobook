@@ -1,0 +1,42 @@
+{% extends 'photo/index.html' %}
+{% block content %}
+<form method="POST" action="/updatePhoto/{{ photo.id }}" enctype="multipart/form-data">
+     {% csrf_token %}
+    <table>
+        <tr>
+
+            <td><input name="caption" value="{{ photo.caption}}"></td>
+        </tr>
+
+         <tr>
+
+            <td><input type="file"   name="image" value="{{ photo.image}}"></td>
+        </tr>
+
+        <tr>
+
+            <td><input type="text" name="description" value="{{ photo.description}}"></td>
+        </tr>
+
+<!--         <tr>-->
+<!--            <td><input type="date" value="{{photo.published_date}}"></td>-->
+<!--        </tr>-->
+
+
+
+
+
+        <tr>
+            <td><button type="submit" >Update</button></td>
+        </tr>
+
+
+    </table>
+
+
+
+
+ </form>
+
+
+{% endblock %}
